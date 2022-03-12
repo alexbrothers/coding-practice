@@ -1,4 +1,4 @@
-package practice.questions.common;
+package practice.common.common;
 
 public interface FileValidator {
 

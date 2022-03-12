@@ -1,4 +1,4 @@
-package practice.questions.common;
+package practice.common.common;
 
 import java.util.List;
 

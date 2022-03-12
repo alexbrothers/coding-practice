@@ -1,7 +1,7 @@
 package practice.questions;
 
-import practice.questions.common.File;
-import practice.questions.common.FileValidator;
+import practice.common.common.File;
+import practice.common.common.FileValidator;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -3,7 +3,7 @@ package practice;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import practice.questions.FileSystemSearch;
-import practice.questions.common.File;
+import practice.common.common.File;
 
 import java.util.Arrays;
 import java.util.List;
