@@ -1,4 +1,4 @@
-package leetcode.contests.twoninetynine;
+package leetcode.questions.twoninetynine;
 
 public class XMatrix {
 
