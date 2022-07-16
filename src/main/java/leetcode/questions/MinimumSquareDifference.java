@@ -1,4 +1,4 @@
-package leetcode.contests.biweeklyeightytwo;
+package leetcode.questions;
 
 import java.util.Comparator;
 import java.util.HashMap;

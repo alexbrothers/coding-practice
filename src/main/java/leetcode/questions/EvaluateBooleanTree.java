@@ -1,4 +1,4 @@
-package leetcode.contests.biweeklyeightytwo;
+package leetcode.questions;
 
 public class EvaluateBooleanTree {
 

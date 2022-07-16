@@ -1,4 +1,4 @@
-package leetcode.questions.twoninetynine;
+package leetcode.questions;
 
 import java.util.HashMap;
 import java.util.Map;
