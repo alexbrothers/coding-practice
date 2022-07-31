@@ -12,8 +12,11 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) throws NoLockerFoundException {
-        CountSmaller countSmaller = new CountSmaller();
-        countSmaller.countSmaller(new int[]{5, 2, 6, 1});
+        WordSubsets wordSubsets = new WordSubsets();
+        wordSubsets.wordSubsets(
+                new String[]{"amazon","apple","facebook","google","leetcode"},
+                new String[]{"lo","eo"}
+        );
     }
 
 }
