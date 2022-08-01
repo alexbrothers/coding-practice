@@ -24,34 +24,35 @@ public class NumArray {
     TreeNode root;
 
     public NumArray(int[] nums) {
-        Queue<TreeNode> queue = new LinkedList<>();
+        int sum = 0;
         for (int i = 0; i < nums.length; i++) {
-            queue.add(new TreeNode(nums[i], i, i, null, null));
+            sum += nums[i];
         }
-        while (true) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node;
-                TreeNode node1 = queue.poll();
-                if (queue.isEmpty()) {
-                    if (node1.left == 0 && node1.right == nums.length - 1) {
-                        node = node1;
-                    }
-                    else {
-                        node = new TreeNode(node1.sum, node1.left, node1.right, null, node1);
-                    }
-                }
-                else {
-                    TreeNode node2 = queue.poll();
-                    node = new TreeNode(node1.sum + node2.sum, node1.left, node2.right, node1, node2);
-                }
-                if (node.left == 0 && node.right == nums.length - 1) {
-                    root = node;
-                    break;
-                }
-                queue.add(node);
+        root = split(0, nums.length - 1, 0, nums.length - 1, sum, nums);
+    }
+
+    private TreeNode split(int left, int right, int oldLeft, int oldRight, int oldSum, int[] nums) {
+        if (left > right) {
+            return null;
+        }
+        if (left == right) {
+            return new TreeNode(nums[left], left, right, null, null);
+        }
+        if (left > oldLeft) {
+            for (int i = oldLeft; i < left; i++) {
+                oldSum -= nums[i];
             }
         }
+        if (right < oldRight) {
+            for (int i = oldRight; i > right; i--) {
+                oldSum -= nums[i];
+            }
+        }
+        TreeNode node = new TreeNode(oldSum, left, right, null, null);
+        int mid = node.left + ((node.right - node.left) / 2);
+        node.leftNode = split(left, mid, left, right, oldSum, nums);
+        node.rightNode = split(mid + 1, right, left, right, oldSum, nums);
+        return node;
     }
 
     public void update(int index, int val) {
@@ -60,7 +61,7 @@ public class NumArray {
 
     private int updateHelper(int index, int val, TreeNode node) {
         if (node.left == index && node.right == index) {
-            int diff = node.sum - val;
+            int diff = val - node.sum;
             node.sum = val;
             return diff;
         }
@@ -86,10 +87,10 @@ public class NumArray {
         }
         int mid = node.left + ((node.right - node.left) / 2);
         int sum = 0;
-        if (mid >= node.left) {
+        if (mid >= left) {
             sum += sumRangeHelper(left, right, node.leftNode);
         }
-        if (mid < node.right) {
+        if (mid < right) {
             sum += sumRangeHelper(left, right, node.rightNode);
         }
         return sum;
