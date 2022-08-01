@@ -12,11 +12,11 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) throws NoLockerFoundException {
-        WordSubsets wordSubsets = new WordSubsets();
-        wordSubsets.wordSubsets(
-                new String[]{"amazon","apple","facebook","google","leetcode"},
-                new String[]{"lo","eo"}
-        );
+        NumArray numArray = new NumArray(new int[]{1, 3, 5});
+        System.out.println(numArray.sumRange(0, 2));
+        numArray.update(1, 2);
+        System.out.println(numArray.sumRange(0, 2));
+        System.out.println(numArray.sumRange(1, 2));
     }
 
 }
