@@ -11,9 +11,11 @@ import leetcode.questions.*;
 import java.util.List;
 
 public class main {
-    public static void main(String[] args) throws NoLockerFoundException {
-        MedianOfTwoSortedArrays medianOfTwoSortedArrays = new MedianOfTwoSortedArrays();
-        medianOfTwoSortedArrays.findMedianSortedArrays(new int[]{1, 4, 5}, new int[]{2, 3, 6, 7});
+    public static void main(String[] args) {
+        //[-1,0,1,2,-1,-4]
+        //-1
+        FourSum fourSum = new FourSum();
+        fourSum.fourSum(new int[]{2, 2, 2, 2, 2}, 8);
     }
 
 }
