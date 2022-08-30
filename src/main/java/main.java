@@ -10,7 +10,14 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-        RightSmallerThan.rightSmallerThan(List.of(8, 5, 11, -1, 3, 4, 2));
+        //[['X','X','X','X'],['X','O','O','X'],['X','X','O','X'],['X','O','X','X']]
+        SurroundedRegions surroundedRegions = new SurroundedRegions();
+        surroundedRegions.solve(new char[][]{
+                new char[]{'X','X','X','X'},
+                new char[]{'X','O','O','X'},
+                new char[]{'X','X','O','X'},
+                new char[]{'X','O','X','X'},
+        });
     }
 
 }
