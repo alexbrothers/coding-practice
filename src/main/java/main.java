@@ -10,7 +10,12 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-        RightSmallerThan.rightSmallerThan(List.of(8, 5, 11, -1, 3, 4, 2));
+        LargestMagicSquare largestMagicSquare = new LargestMagicSquare();
+        largestMagicSquare.largestMagicSquare(new int[][]{
+                new int[]{5, 1, 3, 1},
+                new int[]{9, 3, 3, 1},
+                new int[]{1, 3, 3, 8}
+        });
     }
 
 }
