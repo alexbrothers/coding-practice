@@ -10,12 +10,8 @@ import java.util.List;
 
 public class main {
     public static void main(String[] args) {
-        LargestMagicSquare largestMagicSquare = new LargestMagicSquare();
-        largestMagicSquare.largestMagicSquare(new int[][]{
-                new int[]{5, 1, 3, 1},
-                new int[]{9, 3, 3, 1},
-                new int[]{1, 3, 3, 8}
-        });
+        MaxScoreMultiplicationOperations maxScoreMultiplicationOperations = new MaxScoreMultiplicationOperations();
+        maxScoreMultiplicationOperations.maximumScore(new int[]{1, 2, 3}, new int[]{3, 2, 1});
     }
 
 }
