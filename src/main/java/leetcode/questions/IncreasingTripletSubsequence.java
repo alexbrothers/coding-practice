@@ -1,0 +1,29 @@
+package leetcode.questions;
+
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class IncreasingTripletSubsequence {
+
+    public boolean increasingTriplet(int[] nums) {
+        if (nums == null) {
+            throw new IllegalArgumentException();
+        }
+        int first = Integer.MAX_VALUE;
+        int second = Integer.MAX_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            if (num <= first) {
+                first = num;
+            }
+            else if (num <= second) {
+                second = num;
+            }
+            else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
